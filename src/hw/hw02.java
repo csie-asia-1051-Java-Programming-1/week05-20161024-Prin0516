@@ -1,5 +1,9 @@
 package hw;
-
+/*
+ * Topic: 讓使用者輸入一正整數n，輸出1+2+3+…+m<=n的最大整數m=?
+ * Date: 2016/10/24
+ * Author: 105021046 賴沛錞
+ */
 import java.util.Scanner;
 
 public class hw02 {
