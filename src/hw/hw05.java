@@ -11,33 +11,36 @@ public class hw05 {
 		int n = scn.nextInt();
 		int data[][] = new int[n][n];
 		data[0][0] = 1;
-		
-		for (int i = 1; i < n; i++) {
-			data[i][0] = data[i - 1][0] + i;
-
-		}
-		for (int i = 0; i < n; i++) {
-			int b = 2 + i;
-			for (int j = 1; j < n - i; j++) {
-				data[i][j] = data[i][j - 1] + b;
-				b++;
-			}
-			
-		}
-		for (int i = 1; i < n; i++) {
-			int c = n;
-			for (int j = n-i; j < n; j++) {
-				data[i][j] = data[i][j - 1] + c;
-				c--;
+		if (n > 0 && n < 21) {
+			for (int i = 1; i < n; i++) {
+				data[i][0] = data[i - 1][0] + i;
 
 			}
+			for (int i = 0; i < n; i++) {
+				int b = 2 + i;
+				for (int j = 1; j < n - i; j++) {
+					data[i][j] = data[i][j - 1] + b;
+					b++;
+				}
 
-		}
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				System.out.print(data[i][j] + "\t");
 			}
-			System.out.println();
+			for (int i = 1; i < n; i++) {
+				int c = n;
+				for (int j = n - i; j < n; j++) {
+					data[i][j] = data[i][j - 1] + c;
+					c--;
+
+				}
+
+			}
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++) {
+					System.out.print(data[i][j] + "\t");
+				}
+				System.out.println();
+			}
+		} else {
+			System.out.println("請重新輸入");
 		}
 	}
 }
